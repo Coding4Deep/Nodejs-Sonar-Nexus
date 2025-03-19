@@ -28,7 +28,7 @@
   "collectCoverageFrom": [
     "**/*.js",
     "!node_modules/**",
-    "coverage/**",
+    "!coverage/**",
     "!sonar-project.properties"
   ]
 }
