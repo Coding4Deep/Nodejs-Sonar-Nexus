@@ -1,11 +1,11 @@
-{
+ {
   "name": "node-jenkins-project",
   "version": "1.0.0",
   "description": "this project is for jenkins pipeline",
   "main": "calculator.js",
   "scripts": {
     "clean": "rm -rf node_modules package-lock.json  coverage",
-    "test": "nyc --reporter=lcov jest --coverage  --collectCoverageFrom=**/*.js",
+    "test": "nyc --reporter=lcov jest --coverage  --collectCoverageFrom=**/*.js --coverageReporters=lcov --coverageDirectory=coverage",
     "sonar": "npx sonar-scanner ",
     "coverage": "nyc --reporter=lcov --reporter=text npm test"
   },
