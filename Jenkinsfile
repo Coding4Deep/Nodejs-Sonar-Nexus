@@ -20,22 +20,16 @@ pipeline{
                    sh 'npm install'
                }
           }
-         stage('NYC coverage'){
-               steps{
-                   sh 'npm run coverage'
-               }
-          }
-	   
-          stage('Jest test'){
+	       stage('Jest test'){
                steps{
                    sh 'npm test --coverage '  // OR npm test or npm test --coverage
                }
           }
-       
+     
           stage('SonarQube'){
                 steps {
                 withSonarQubeEnv('SonarQube') { 
-                    sh 'npm run sonar'
+                    sh 'npx sonar-scanner'
                 }
             }
           } 
