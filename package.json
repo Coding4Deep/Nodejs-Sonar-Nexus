@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rm -rf node_modules package-lock.json  coverage",
     "test": "nyc --reporter=lcov jest --coverage ",
-    "sonar": "npx sonar-scanner ",
+    "sonar": "npx sonar-scanner "
   },
   "author": "",
   "license": "ISC",
