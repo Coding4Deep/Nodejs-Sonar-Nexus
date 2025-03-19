@@ -31,9 +31,11 @@ pipeline{
                }
           }
           stage('SonarQube'){
-               steps{
-                   sh 'npm run sonar'
-               }
+                steps {
+                withSonarQubeEnv('SonarQube') { 
+                    sh 'npx sonar-scanner'
+                }
+            }
           }
           
           stage('build'){
