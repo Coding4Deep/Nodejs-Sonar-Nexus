@@ -22,7 +22,7 @@ pipeline{
           }
           stage('Jest test'){
                steps{
-                   sh 'npx jest'  // OR npm test or npm test --coverage
+                   sh 'npx jest --coverage --coverageReporters=lcov  '  // OR npm test or npm test --coverage
                }
           }
           stage('NYC coverage'){
