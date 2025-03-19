@@ -30,13 +30,20 @@ pipeline{
                    sh 'npm run coverage'
                }
           }
-          stage('SonarQube'){
+          /*stage('SonarQube'){
                 steps {
                 withSonarQubeEnv('SonarQube') { 
                     sh 'npm run sonar'
                 }
             }
-          }
+          } */
+
+
+	   stage('SonarQube'){
+                steps {
+                    sh 'npx sonar-scanner'
+                }
+            } 
           
           stage('build'){
                steps{
