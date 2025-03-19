@@ -22,7 +22,7 @@ pipeline{
           }
           stage('Jest test'){
                steps{
-                   sh 'npx jest --coverage --coverageReporters=lcov  '  // OR npm test or npm test --coverage
+                   sh 'npm test --coverage --coverageReporters=lcov  '  // OR npm test or npm test --coverage
                }
           }
           stage('NYC coverage'){
@@ -30,20 +30,14 @@ pipeline{
                    sh 'npm run coverage'
                }
           }
-          /*stage('SonarQube'){
+          stage('SonarQube'){
                 steps {
                 withSonarQubeEnv('SonarQube') { 
                     sh 'npm run sonar'
                 }
             }
-          } */
+          } 
 
-
-	   stage('SonarQube'){
-                steps {
-                    sh 'npx sonar-scanner'
-                }
-            } 
           
           stage('build'){
                steps{
