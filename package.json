@@ -5,7 +5,7 @@
   "main": "calculator.js",
   "scripts": {
     "clean": "rm -rf node_modules package-lock.json  coverage",
-    "test": "nyc --reporter=lcov jest --coverage ",
+    "test": "nyc --reporter=lcov jest --coverage --collectCoverageFrom=**/*.js",
     "sonar": "npx sonar-scanner "
   },
   "author": "",
