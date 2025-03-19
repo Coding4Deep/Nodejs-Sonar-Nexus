@@ -16,6 +16,7 @@ pipeline{
 
           stage('Install dependencies'){
                steps{
+	          sh 'npm run clean'
                    sh 'npm install'
                }
           }
