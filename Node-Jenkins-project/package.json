@@ -1,0 +1,37 @@
+{
+  "name": "node-jenkins-project",
+  "version": "1.0.0",
+  "description": "this project is for jenkins pipeline",
+  "main": "calculator.js",
+  "scripts": {
+    "clean": "rm -rf node_modules package-lock.json  coverage",
+    "test": "nyc --reporter=lcov jest --coverage  --collectCoverageFrom=**/*.js",
+    "sonar": "npx sonar-scanner ",
+    "coverage": "nyc --reporter=lcov --reporter=text npm test"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nyc": "^17.1.0",
+    "sonar-scanner": "^3.1.0"
+  },
+     "jest": {
+  "collectCoverage": true,
+    "coverageDirectory": "coverage",
+  "coverageReporters": [
+    "json",
+    "lcov",
+    "text",
+    "clover",
+    "cobertura"
+  ],
+  "collectCoverageFrom": [
+    "**/*.js",
+    "!node_modules/**",
+    "coverage/**",
+    "!sonar-project.properties"
+  ]
+}
+
+}
