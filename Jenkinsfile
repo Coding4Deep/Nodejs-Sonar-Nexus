@@ -6,7 +6,6 @@ pipeline{
 	    nexusurl='http://192.168.33.11:8081/repository/node-js-repo-local/'
 	}
 	
-
    stages{ 
 
          stage('checkout'){
@@ -43,16 +42,13 @@ pipeline{
                    sh 'npm pack'
                }
           }
-          
-           
-           
 
           stage('Upload to Nexus') {
               steps {
                  script {
                    echo "Deploying to Nexus..."
                   
-                   sh "npm publish --registry=http://192.168.33.11:8081/repository/node-js-repo-local/"
+                   sh "npm publish --registry=${nexusurl}"
                }
             }
         }
