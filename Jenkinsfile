@@ -33,7 +33,7 @@ pipeline{
           stage('SonarQube'){
                 steps {
                 withSonarQubeEnv('SonarQube') { 
-                    sh 'npx sonar-scanner'
+                    sh 'npm run sonar'
                 }
             }
           }
