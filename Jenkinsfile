@@ -28,7 +28,7 @@ pipeline{
 	   
           stage('Jest test'){
                steps{
-                   sh 'npm test --coverage --coverageReporters=lcov   coverageDirectory=coverage'  // OR npm test or npm test --coverage
+                   sh 'npm test --coverage '  // OR npm test or npm test --coverage
                }
           }
        
